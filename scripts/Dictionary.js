@@ -9,16 +9,17 @@ function DictionaryToArray(fileName) {
                 return array;
  }
 
+
 //The function change Chinese dictionary to array
  function CNDictionaryToArray(){
- 	var fileNameCN = "./default_cn.txt";
+ 	var fileNameCN = "http://demo.criteo.com/support/apac/japan/testhtml/default_cn.txt";
  	var array = DictionaryToArray(fileNameCN);
- 	return array;
+	return array;
  }
 
 //The function change Japanese dictionary to array
  function JPDictionaryToArray(){
- 	var fileNameJP = "./default_jp.txt";
+ 	var fileNameJP = "http://demo.criteo.com/support/apac/japan/testhtml/default_jp.txt";
  	var array = DictionaryToArray(fileNameJP);
  	return array;
  }
