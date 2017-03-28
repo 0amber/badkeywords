@@ -1,2 +1,0 @@
-# badkeywords
-badkeywords
