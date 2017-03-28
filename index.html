@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <title>Badwords detection</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 <meta charset="iso-8859-1">
 <link rel="stylesheet" href="styles/layout.css" type="text/css">
 </head>
@@ -18,10 +19,9 @@
   <div id="container" class="clear">
     <!-- content body -->
     <section id="main">
-      <form name="formSubmit">
         <div>
           <h4>Please select the feed language</h4>
-          <select>
+          <select id="language">
             <option value ="jp">Japanese</option>
             <option value ="cn">Chinese</option>
           </select>
@@ -35,8 +35,17 @@
       <br>
       <br>
       <button id="submit">Submit</button>
-    </form>
     </section>
+    <br>
+    <br>
+    <h2 id="exactSearchResultText"></h2>
+    <br>
+    <div id="exactSearchResult"></div>
+    <br>
+    <h2 id="broadSearchResultText"></h2>
+    <br>
+    <div id="broadSearchResult"></div>
+    <br>
   </div>
 </div>
 <!-- footer -->
@@ -45,5 +54,6 @@
     <p>Copyright &copy; 2017 - All Rights Reserved - <a href="http://www.criteo.com/">Criteo KK.</a></p>
   </footer>
 </div>
+<script type="text/javascript" src="scripts/app.js"></script>
 </body>
 </html>

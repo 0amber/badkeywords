@@ -84,7 +84,7 @@ blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
 
 /* ------Main Content-----*/
 
-#container #main{display:block; width: 940px; height: 360px; padding: auto; margin: auto;}
+#container #main{display:block; width: 940px; padding: auto; margin: auto;}
 #container #main a{display:block; padding:9px; border:1px solid #DEDEDE;}
 #container #main a:hover{border-color:#FF9900;}
 

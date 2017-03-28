@@ -9,6 +9,11 @@ function ExactSearch(feed, dictionary) {
 				searchResult.push(feed[i]);
 		}
 	}
+	document.getElementById("exactSearchResultText").innerHTML = "The exact search result is";
+		if (searchResult.length == 0) 
+		document.getElementById("exactSearchResult").innerHTML = "No match";
+		else
+			document.getElementById("exactSearchResult").innerHTML = searchResult;
 	return searchResult;
 }
 
@@ -23,5 +28,10 @@ function BroadSearch(feed, dictionary) {
 				searchResult.push(feed[i]);
 		}
 	}
+	document.getElementById("broadSearchResultText").innerHTML = "The broad search result is";
+	if (searchResult.length == 0) 
+		document.getElementById("broadSearchResult").innerHTML = "No match";
+	else 
+		document.getElementById("broadSearchResult").innerHTML = searchResult;
 	return searchResult;
 }
