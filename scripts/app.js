@@ -3,14 +3,16 @@ document.write("<script src='scripts/Search.js' type='text/javascript'></script>
 document.write("<script src='scripts/Keywords.js' type='text/javascript'></script>");
 document.write("<script src='scripts/Encoding.js' type='text/javascript'></script>");
 
-var lang = document.getElementById("language").value;
+var lang = 'jp';
+// document.getElementById("language").value;
  	var content;
 		window.onload = function () {
 			var obj1 = document.getElementById("file");
 			obj1.addEventListener("change",function(evt){
 				var file = evt.target.files[0];
-				console.log(lang);
-					if(lang == 'jp')
+				lang = file.name;
+
+					if(lang.indexOf('jp.') != -1)
 						{
 							content = JPKeywords(file);
 							console.log('content');
@@ -24,16 +26,16 @@ var lang = document.getElementById("language").value;
 			};
 
 
-document.getElementById("submit").addEventListener("click", function(){
-	//The feed content will be detected here.
-	if (lang == 'jp') {
-		var array = JPDictionaryToArray();
-		var search1 = ExactSearch(content, array);
-		var search2 = BroadSearch(content, array); 	
-	}
-	if (lang == 'cn') {
-		var array = CNDictionaryToArray();
-		var search1 = ExactSearch(content, array);
-		var search2 = BroadSearch(content, array); 	
-	}
-}, false);
+// document.getElementById("submit").addEventListener("click", function(){
+// 	//The feed content will be detected here.
+// 	if (lang == 'jp') {
+// 		var array = JPDictionaryToArray();
+// 		var search1 = ExactSearch(content, array);
+// 		var search2 = BroadSearch(content, array); 	
+// 	}
+// 	if (lang == 'cn') {
+// 		var array = CNDictionaryToArray();
+// 		var search1 = ExactSearch(content, array);
+// 		var search2 = BroadSearch(content, array); 	
+// 	}
+// }, false);

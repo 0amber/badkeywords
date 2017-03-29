@@ -267,6 +267,10 @@ svg {
 	padding: 200px;
 	color: black;
 }
+
+#result{
+	color: #fff;
+}
 /*input file */
 .inputfile {
 	width: 0.1px;
