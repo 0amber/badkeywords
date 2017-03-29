@@ -1,7 +1,7 @@
 document.write("<script src='scripts/Dictionary.js' type='text/javascript'></script>");
 document.write("<script src='scripts/Search.js' type='text/javascript'></script>");
 document.write("<script src='scripts/Keywords.js' type='text/javascript'></script>");
-document.write("<script src='scripts/encoding.js' type='text/javascript'></script>");
+document.write("<script src='scripts/Encoding.js' type='text/javascript'></script>");
 
 var lang = document.getElementById("language").value;
  	var content;
