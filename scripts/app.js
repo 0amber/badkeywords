@@ -3,17 +3,21 @@ document.write("<script src='scripts/Search.js' type='text/javascript'></script>
 document.write("<script src='scripts/Keywords.js' type='text/javascript'></script>");
 document.write("<script src='scripts/encoding.js' type='text/javascript'></script>");
 
-	var lang = document.getElementById("language").value;
- 			var content = [];
-			window.onload = function () {
-				let obj1 = document.getElementById("file");
-				obj1.addEventListener("change",function(evt){
-					let file = evt.target.files[0];
+var lang = document.getElementById("language").value;
+ 	var content;
+		window.onload = function () {
+			var obj1 = document.getElementById("file");
+			obj1.addEventListener("change",function(evt){
+				var file = evt.target.files[0];
+				console.log(lang);
 					if(lang == 'jp')
 						{
 							content = JPKeywords(file);
-						console.log('content');
-					}
+							console.log('content');
+							console.log(content[0]);
+							console.log('content');
+							content = JPKeywords(file);
+						}
 					else 
 						content = CNKeywords(file);
 				},false);
@@ -22,7 +26,6 @@ document.write("<script src='scripts/encoding.js' type='text/javascript'></scrip
 
 document.getElementById("submit").addEventListener("click", function(){
 	//The feed content will be detected here.
-	// var testArray = ["消炎","消炎药","消失","福尔马林","张福尔马林丹","福尔马"];
 	if (lang == 'jp') {
 		var array = JPDictionaryToArray();
 		var search1 = ExactSearch(content, array);

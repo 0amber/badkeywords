@@ -9,11 +9,13 @@ function ExactSearch(feed, dictionary) {
 				searchResult.push(feed[i]);
 		}
 	}
-	document.getElementById("exactSearchResultText").innerHTML = "The exact search result is";
-		if (searchResult.length == 0) 
+	document.getElementById("exactSearchText").innerHTML = "The exact search result number and percentage";
+	if (searchResult.length == 0) 
 		document.getElementById("exactSearchResult").innerHTML = "No match";
-		else
-			document.getElementById("exactSearchResult").innerHTML = searchResult;
+	else{
+		document.getElementById("exactSearchResult").innerHTML = searchResult.length
+		document.getElementById("exactSearchResultPercentage").innerHTML = (searchResult.length/feed.length)*100 + "%";
+	}
 	return searchResult;
 }
 
@@ -28,10 +30,12 @@ function BroadSearch(feed, dictionary) {
 				searchResult.push(feed[i]);
 		}
 	}
-	document.getElementById("broadSearchResultText").innerHTML = "The broad search result is";
+	document.getElementById("broadSearchText").innerHTML = "The broad search result number and percentage";
 	if (searchResult.length == 0) 
 		document.getElementById("broadSearchResult").innerHTML = "No match";
-	else 
-		document.getElementById("broadSearchResult").innerHTML = searchResult;
+	else {
+		document.getElementById("broadSearchResult").innerHTML = searchResult.length;
+		document.getElementById("broadSearchResultPercentage").innerHTML = (searchResult.length/feed.length)*100 + "%";
+	}
 	return searchResult;
 }
