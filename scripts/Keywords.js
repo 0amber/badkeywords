@@ -1,7 +1,8 @@
 function JPKeywords(csv) {
 	let url = ["http://yapi.ta2o.net/apis/mecapi.cgi?sentence=", "&response=surface&filter=noun%2Cuniq&format=json"];
 	let language = "JP";
-	var result = _getKeywords(url,csv,language);
+	let result = _getKeywords(url,csv,language);
+	console.log(result);
 	return result;
 }
 
@@ -16,16 +17,18 @@ function CNKeywords(csv) {
 function _getKeywords(url,csv,language) {
 	let nameNum, descriptionNum, feeds;
 	let Reader = new FileReader();
+	let i = 0;
+	// let keywords = [];
 	if (language == "JP") Reader.readAsBinaryString(csv);
 	if (language == "CN") Reader.readAsText(csv);
-
+	// if(Reader.readyState == 2) { 
 	Reader.onload = function(){
+		let keywords = [];
 		let utf8Csv = _convertToUtf8(Reader.result);
 		let firstRow = utf8Csv.split(/\r\n|\r|\n/, 1) + '';
 		let nameNum = firstRow.split(/\,|\|/).indexOf("name") || "";
 		let descriptionNum = firstRow.split(/\,|\|/).indexOf("description") || "";
 		let feeds = utf8Csv.split(/\r\n|\r|\n/);
-		let keywords = [];
 
 		for(let i = 1; i < feeds.length - 1; i++) {
 			let params = feeds[i].split(/\,|\|/);
@@ -37,7 +40,7 @@ function _getKeywords(url,csv,language) {
 					if (language == "JP") {
 						let feedObjs = JSON.parse(XmlHttp.responseText);
 						for (let feedObj of feedObjs) {
-							console.log(feedObj.surface);
+							// console.log(feedObj.surface);
 							keywords.push(feedObj.surface);
 						}
 					}
@@ -47,16 +50,31 @@ function _getKeywords(url,csv,language) {
 							console.log(feedObj);
 							keywords.push(feedObj);
 						}
-
 					}
 				}
 			}
 			XmlHttp.send();
 		}
-		console.log(keywords);
+
+		if (language == "JP") {
+		var array = JPDictionaryToArray();
+		console.log(array);
+		var search1 = ExactSearch(keywords, array);
+		var search2 = BroadSearch(keywords, array); 
+		console.log(keywords);	
+	}
+		if (language == "CN") {
+		var array = CNDictionaryToArray();
+		console.log(array);
+		var search1 = ExactSearch(keywords, array);
+		var search2 = BroadSearch(keywords, array); 
+		console.log(keywords);	
+	}
 		return keywords;
 	}
-}
+ 	}
+// 	else return Reader.readyState;
+// }
 
 
 function _convertToUtf8(csv) {
