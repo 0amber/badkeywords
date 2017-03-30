@@ -18,20 +18,19 @@ function _getKeywords(url,csv,language) {
 	let nameNum, descriptionNum, feeds;
 	let Reader = new FileReader();
 	let i = 0;
-	// let keywords = [];
-	if (language == "JP") Reader.readAsBinaryString(csv);
-	if (language == "CN") Reader.readAsText(csv);
-	// if(Reader.readyState == 2) { 
+	let encoding = Encoding.detect(csv);
+	if (encoding == 'SJIS') Reader.readAsBinaryString(csv);
+	else Reader.readAsText(csv);
 	Reader.onload = function(){
 		let keywords = [];
 		let utf8Csv = _convertToUtf8(Reader.result);
 		let firstRow = utf8Csv.split(/\r\n|\r|\n/, 1) + '';
-		let nameNum = firstRow.split(/\,|\|/).indexOf("name") || "";
-		let descriptionNum = firstRow.split(/\,|\|/).indexOf("description") || "";
+		let nameNum = firstRow.split(/\,|\||\t/).indexOf("name") || "";
+		let descriptionNum = firstRow.split(/\,|\||\t/).indexOf("description") || "";
 		let feeds = utf8Csv.split(/\r\n|\r|\n/);
 
 		for(let i = 1; i < feeds.length - 1; i++) {
-			let params = feeds[i].split(/\,|\|/);
+			let params = feeds[i].split(/\,|\||\t/);
 			let requestUrl = url[0] + params[nameNum] + params[descriptionNum] + url[1];
 			let XmlHttp = new XMLHttpRequest();
 			XmlHttp.open("get", requestUrl, false);
@@ -40,7 +39,7 @@ function _getKeywords(url,csv,language) {
 					if (language == "JP") {
 						let feedObjs = JSON.parse(XmlHttp.responseText);
 						for (let feedObj of feedObjs) {
-							// console.log(feedObj.surface);
+							console.log(feedObj.surface);
 							keywords.push(feedObj.surface);
 						}
 					}

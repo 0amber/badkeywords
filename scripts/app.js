@@ -17,8 +17,6 @@ var lang = 'jp';
 							content = JPKeywords(file);
 							console.log('content');
 							console.log(content[0]);
-							console.log('content');
-							content = JPKeywords(file);
 						}
 					else 
 						content = CNKeywords(file);
