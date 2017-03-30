@@ -1,63 +1,208 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-<title>Badwords detection</title>
-<meta http-equiv='Content-Type' content='text/html' />
-<meta charset="UTF-8">
-<link rel="stylesheet" href="styles/layout.css" type="text/css">
-</head>
-<body text-align="center">
-<div class="wrapper row1">
-  <header id="header" class="clear">
-    <div id="hgroup">
-      <h1>Badwords detection</h1>
-    </div>
-  </header>
-</div>
-<!-- content -->
-<div class="wrapper row2">
-  <div id="container" class="clear">
-    <!-- content body -->
-    <section id="main">
-        <div>
-          <h4>Please select the feed language</h4>
-          <select id="language">
-            <option value ="jp">Japanese</option>
-            <option value ="cn">Chinese</option>
-          </select>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DoubleByte</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ambixo.css" rel="stylesheet">
+    <!-- Script -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/portfolio/modernizr.custom.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="img/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-144x144.png"> 
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+ 
+
+    <!-- SEO Meta Tags -->
+    <!-- <meta name="description" content="" /> -->
+    <!-- <meta name="keywords" content="" /> -->
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Signika:300' rel='stylesheet' type='text/css'>
+
+    <!-- Font Awesome -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+  <body data-spy="scroll" data-target=".header" text-align="center">
+    <header>
+      <div id="header" class="header">
+        <div class="container">
+          <h1 class="logo"><a href="#"><span>Detect</span>Multi-Byte</a></h1>
+          <h2 class="tagline hidden-xs">Removing <span>naughty products</span> in languages that don't like <span> spaces.</span>  </h2>
         </div>
-        <br>
-        <br>
-        <h4>Please select the feed file</h4>
-      <div>
-         <input type="file" id="file"><br>
-      </div>
-      <br>
-      <br>
-      <button id="submit">Submit</button>
-    </section>
-    <br>
-    <br>
-    <h2 id="exactSearchText"></h2>
-    <br>
-    <h2 id="exactSearchResult"></h2>
-    <br>
-    <div id="exactSearchResultPercentage"></div>
-    <br>
-    <h2 id="broadSearchText"></h2>
-    <br>
-    <h2 id="broadSearchResult"></h2>
-    <br>
-    <div id="broadSearchResultPercentage"></div>
-    <br>
+        <a href="#about" class="sr-only">Skip to main content</a>
+        <nav id="main-nav">
+          <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li><a href="#main-img">Home</a></li>
+                  <li><a href="#Chinese">Chinese</a></li>
+                  <li><a href="#Japanese">Japanese</a></li>
+				 <div class="dropdown">
+  <span class ='dropping'>The Team</span>
+  <div class="dropdown-content">
+   <a href="#about-1">Kotaro</a><br />
+   <a href="#about-2">Bowen</a><br />
+   <a href="#about-3">Jaeyoon</a><br />
+   <a href="#about-4">Lister</a>
   </div>
 </div>
-<!-- footer -->
-<div class="wrapper row3">
-  <footer id="footer" class="clear">
-    <p>Copyright &copy; 2017 - All Rights Reserved - <a href="http://www.criteo.com/">Criteo KK.</a></p>
-  </footer>
-</div>
-<script type="text/javascript" src="scripts/app.js"></script>
-</body>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <svg class="decor" height="100" preserveaspectratio="none" version="1.1" viewbox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 100 L100 0 L0 0" stroke-width="0"></path>
+      </svg>
+    </header>
+
+    <section id="main-img">
+	<div style="background-image: url(bl4.jpg);  background-size:100%;">
+	<div id="thefile">
+		 <br /><br />
+ 
+				<input type="file" name="file" id="file" class="inputfile" />
+        <label for="file"> Choose a file </label>
+    <div id="result">
+    <h3 id="exactSearchText"></h3>
+    <div id="exactSearchResult"></div>
+    <div id="exactSearchResultPercentage"></div>
+    <h3 id="broadSearchText"></h3>
+    <div id="broadSearchResult"></div>
+    <div id="broadSearchResultPercentage"></div>
+    </div>
+	</div>			 
+
+  </div>
+    </section>
+
+    <!-- About -->
+    <section id="about-1" class="section-page">
+      <div class="container-fluid">
+        <div class="container">
+           <div>
+            <div class="about col-sm-6">
+              <div class="wrap-about"><br /><br /><br /><br />
+                <h3>Kotaro Shimada</h3>
+                <p>
+                  The mind behind the project. He first did something something something. Something something something. Something something something. Something something something. Something something something. Something something something.
+                </p>
+                
+              </div>
+            </div>
+            <div class="about col-sm-6"><img class="img-responsive" src="img/man.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-2" class="section-page">
+      <div class="container-fluid">
+        <div class="container">
+           <div>
+            <div class="about col-sm-6"><img class="img-responsive" src="img/man.png" alt="" /></div>
+            <div class="about col-sm-6">
+              <div class="wrap-about"><br /><br /><br /><br />
+                <h3>Bowen Chen</h3>
+                <p>
+                  Bowen Chen something something something. Something something something. Something something something. Something something something. Something something something. Something something something. Something something something. Something something something. Something something something. Something something something. 
+                </p>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	    <section id="about-3" class="section-page">
+      <div class="container-fluid">
+        <div class="container">
+           <div>
+            <div class="about col-sm-6">
+              <div class="wrap-about"><br /><br /><br /><br />
+                <h3>Jaeyoon Song</h3>
+                <p>
+                  The mind behind the project. He first did something something something. Something something something. Something something something. Something something something. Something something something. Something something something.
+                </p>
+                
+              </div>
+            </div>
+            <div class="about col-sm-6"><img class="img-responsive" src="img/man.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+    <section id="about-4" class="section-page">
+      <div class="container-fluid">
+        <div class="container">
+           <div>
+            <div class="about col-sm-6"><img class="img-responsive" src="img/man.png" alt="" /></div>
+            <div class="about col-sm-6">
+              <div class="wrap-about"><br /><br /><br /><br />
+                <h3>Chris Lister</h3>
+                <p>
+                  Chris Lister something something something. Something something something. Something something something. Something something something. Something something something. Something something something. Something something something. Something something something. Something something something. Something something something. 
+                </p>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+
+    <!-- JavaScripts -->
+    <script src="js/services/jquery.easypiechart.min.js"></script>
+    <script src="js/portfolio/grid.js"></script>
+    <script src="js/parallax/jquery.parallax-1.1.3.js"></script>
+    <script src="js/parallax/jquery.localscroll-1.2.7-min.js"></script>
+    <script src="js/parallax/jquery.scrollTo-min.js"></script>
+    <script src="js/ambixo.js"></script>
+
+    <script>
+      $('.easy-pie-chart').easyPieChart({
+        animate: 2000,
+        scaleColor: false,
+        lineWidth: 20,
+        lineCap: 'square',
+        size: 180,
+        trackColor: '#3e383a',
+        barColor: '#D0C5BF',
+      });
+    </script>
+
+
+  </body>
 </html>
