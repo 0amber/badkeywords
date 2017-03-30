@@ -8,7 +8,7 @@ function JPKeywords(csv) {
 
 
 function CNKeywords(csv) {
-	let url = ["http://43.241.223.121/get.php?source=", "&param1=0&param2=0"];
+	let url = ["http://120.26.6.172/get.php?source=", "&param1=0&param2=0"];
 	let language = "CN";
 	return _getKeywords(url,csv,language);
 }
