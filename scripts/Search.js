@@ -15,6 +15,7 @@ function ExactSearch(feed, dictionary) {
 	else{
 		document.getElementById("exactSearchResult").innerHTML = searchResult.length
 		document.getElementById("exactSearchResultPercentage").innerHTML = (searchResult.length/feed.length)*100 + "%";
+		document.getElementById("exactSearchResultKeyword").innerHTML = searchResult.join();
 	}
 	return searchResult;
 }
@@ -36,6 +37,8 @@ function BroadSearch(feed, dictionary) {
 	else {
 		document.getElementById("broadSearchResult").innerHTML = searchResult.length;
 		document.getElementById("broadSearchResultPercentage").innerHTML = (searchResult.length/feed.length)*100 + "%";
+		document.getElementById("broadSearchResultKeyword").innerHTML = searchResult.join();
+
 	}
 	return searchResult;
 }
