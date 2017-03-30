@@ -8,7 +8,7 @@ function JPKeywords(csv) {
 
 
 function CNKeywords(csv) {
-	let url = ["http:\/\/api.pullword.com/get.php?source=", "&param1=0&param2=0"];
+	let url = ["http://43.241.223.121/get.php?source=", "&param1=0&param2=0"];
 	let language = "CN";
 	return _getKeywords(url,csv,language);
 }
@@ -72,8 +72,6 @@ function _getKeywords(url,csv,language) {
 		return keywords;
 	}
  	}
-// 	else return Reader.readyState;
-// }
 
 
 function _convertToUtf8(csv) {
