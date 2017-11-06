@@ -19,7 +19,7 @@ function DictionaryToArray(fileName) {
 
 //The function change Japanese dictionary to array
  function JPDictionaryToArray(){
- 	var fileNameJP = "http://demo.criteo.com/support/apac/japan/testhtml/default_jp.txt";
+ 	var fileNameJP = "./default_jp.txt";
  	var array = DictionaryToArray(fileNameJP);
  	return array;
  }

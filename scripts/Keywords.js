@@ -1,5 +1,6 @@
 function JPKeywords(csv) {
-	let url = ["http://yapi.ta2o.net/apis/mecapi.cgi?sentence=", "&response=surface&filter=noun%2Cuniq&format=json"];
+	let url = ["./mecab.php?sentence=", ""];
+//	let url = ["http://yapi.ta2o.net/apis/mecapi.cgi?sentence=", "&response=surface&filter=noun%2Cuniq&format=json"];
 	let language = "JP";
 	let result = _getKeywords(url,csv,language);
 	console.log(result);
